@@ -45,7 +45,7 @@ $items = $itemsQuery->rowCount() ? $itemsQuery : [];
 							<li>
 									<span class="item <?php echo $item['done'] ? ' done' :  '' ?>"><?php echo $item['name']; ?></span>
 									<?php if(!$item['done']): ?>
-									<a href="#" class="done-button">Mark as done</a>
+									<a href="mark.php?as=done&item=<?php echo $item['id']; ?>" class="done-button">Mark as done</a>
 									<?php endif; ?>
 							</li>
 
@@ -56,7 +56,7 @@ $items = $itemsQuery->rowCount() ? $itemsQuery : [];
 				<?php endif; ?>
 
 				<form class="items-add" action="add.php" method="post">
-						<input type="text" name="name item" placeholder="Type a new item here" class="input" autocomplete="off" required="">
+						<input type="text" name="name" placeholder="Type a new item here" class="input" autocomplete="off" required="">
 						<input type="submit" value="Add" class="submit">
 				</form>
 
